@@ -10,6 +10,8 @@ tableextension 52070 "KNHCustomerExt" extends Customer
             Caption = 'Credit Card No.';
             DataClassification = CustomerContent;
             trigger OnValidate()
+            var
+                MaskedCreditCard: Text[50];
             begin
                 Rec.KNHCreditCardNo := MaskedCreditCard;
             end;
@@ -27,7 +29,4 @@ tableextension 52070 "KNHCustomerExt" extends Customer
         else
             exit('');
     end;
-
-    var
-        MaskedCreditCard: Text[50];
 }

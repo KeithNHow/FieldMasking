@@ -27,10 +27,9 @@ pageextension 52070 "KNHCustomerCardExt" extends "Customer Card"
     }
 
     trigger OnAfterGetRecord()
-    begin
-        Rec.KNHCreditCardNo := Customer.PerformMasking();
-    end;
-
     var
-        Customer: Record Customer;
+        Cust: Record Customer;
+    begin
+        Rec.KNHCreditCardNo := Cust.PerformMasking();
+    end;
 }
